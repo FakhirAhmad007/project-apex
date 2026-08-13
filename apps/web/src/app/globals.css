@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --sun: #ffc93c;
+  --coral: #ff6b6b;
+  --teal: #00c2a8;
+  --plum: #2d1b4e;
+  --plum-light: #3d2766;
+  --cream: #fff8ec;
+  --ink: #241638;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: "Fredoka", "Inter", system-ui, sans-serif;
+}
+
+@keyframes float-blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(16px, -20px) scale(1.05); }
+  66% { transform: translate(-14px, 12px) scale(0.97); }
+}
+.animate-blob { animation: float-blob 9s ease-in-out infinite; }
+.animate-blob-slow { animation: float-blob 14s ease-in-out infinite; }
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.animate-wiggle { animation: wiggle 2.4s ease-in-out infinite; }
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-bob { animation: bob 3s ease-in-out infinite; }
+
+@keyframes pop-in {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-pop { animation: pop-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+
+.hand-underline { position: relative; display: inline-block; }
+.hand-underline::after {
+  content: "";
+  position: absolute;
+  left: -2px; right: -2px; bottom: -4px;
+  height: 10px;
+  background: var(--sun);
+  opacity: 0.55;
+  border-radius: 6px;
+  transform: rotate(-1deg);
+  z-index: -1;
+}
+
+.card-tilt { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.card-tilt:hover { transform: translateY(-6px) rotate(-0.5deg); }
+
+.confetti-piece {
+  position: absolute;
+  top: -10px;
+  border-radius: 2px;
+  animation: confetti-fall linear forwards;
+}
+@keyframes confetti-fall {
+  to { transform: translateY(110vh) rotate(540deg); opacity: 0.9; }
+}
