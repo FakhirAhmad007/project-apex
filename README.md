@@ -1,7 +1,6 @@
 # Project APEX — Crust Issues
 
-AI-powered multi-branch bakery/retail operating system, built on the stack
-specified in the original Phase 1 proposal: **Next.js + FastAPI (Python) +
+AI-powered multi-branch bakery/retail operating system, built on the stack: **Next.js + FastAPI (Python) +
 SQLAlchemy + PostgreSQL (Supabase-compatible) + Prophet + Gemini API**,
 designed for **Vercel + Render** deployment.
 
